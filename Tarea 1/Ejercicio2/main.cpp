@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 using namespace std;
+#define PREC 10 //significant figures to be used
 
 template <class T>
 
@@ -10,15 +12,19 @@ int sumaNVeces(T n, T x){
         result+=x;
         
     }
-    std::cout << setprecision(10) << result << endl;
-    return x;
+    return result;
 }
 
-int main(){
-    sumaNVeces(10000000.0f, 0.00001f);
-    sumaNVeces(10000000.0, 0.00001);
+int main(int argc, char *argv[]){
+    float nF = atof(argv[2]);
+    float xF = atof(argv[3]);
+    double nD = atof(argv[2]);
+    double xD = atof(argv[3]);
+    cout << setprecision(PREC);
+    cout << setprecision(PREC) << "Simple precision: " << sumaNVeces(nF, xF) << endl;
+    cout << setprecision(PREC) << "Double precision: " << sumaNVeces(nD, xD) << endl;
+    
 
     return 0;
-
 }
 
