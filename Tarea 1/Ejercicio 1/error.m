@@ -1,6 +1,6 @@
 #calcula el estimado y su error
 
-function currEstimate = expoError(n, x)
+function currEstimate = error(n, x)
     realValue = exp(x);
     preEstimate = 0;
     kFac = 1;
@@ -10,7 +10,7 @@ function currEstimate = expoError(n, x)
     i = 1; #counter
     esE = scarboroughError(n);
     etE = 100;
-    printf("The real value is: %.10g\n", realValue);
+    printf("The real value is: %.20g\n", realValue);
     printf("N\tCurrent Value       \t\tReal Error\t      Aproximate Error\n");
     while (eaE > esE)
         etE = (realValue - currEstimate) * 100 / realValue;
@@ -35,7 +35,7 @@ function es = scarboroughError(n)
         dec /= 10;
     endfor
     es=(0.5 * dec)*100;
-    printf("The threshold is: %.20g\n", es);
+    printf("The threshold is: %.10g\n", es);
     return;
 endfunction
 
