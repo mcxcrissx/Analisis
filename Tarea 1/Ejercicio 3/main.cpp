@@ -32,7 +32,7 @@ T positiveTraditional(T a, T b, T c){
 //Calculates the roots with both methods // 
 template <class T>
 void quadratic(T a, T b, T c){
-    cout << setprecision(11);
+    cout << setprecision(10);
 	T pT = positiveTraditional(a, b, c);
 	T nT = negativeTraditional(a ,b, c);
 	T nA = negativeAlternative(a, b, c);
