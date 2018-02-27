@@ -18,10 +18,14 @@ int addsNTimes(T n, T x){
 
 //main
 int main(int argc, char *argv[]){
-    float nFloat = atof(argv[2]);
-    float xFloat = atof(argv[3]);
-    double nDouble = atof(argv[2]);
-    double xDouble = atof(argv[3]);
+    if (argc != 3){
+		cerr << "Error. 2 numbers needed." << endl;
+		return -1;
+	}
+    float nFloat = atof(argv[1]);
+    float xFloat = atof(argv[2]);
+    double nDouble = atof(argv[1]);
+    double xDouble = atof(argv[2]);
     float resultFloat = addsNTimes(nFloat, xFloat);
     double resultDouble = addsNTimes(nDouble, xDouble);
     cout << setprecision(PREC) << "Simple precision: " << resultFloat << endl;
